@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators';
 
+// Typescript custom enum for search types (optional)
 export enum SearchType {
   all = '',
   movie = 'movie',
@@ -13,38 +14,47 @@ export enum SearchType {
 @Injectable({
   providedIn: 'root'
 })
-
 export class MovieService {
   url = 'http://www.omdbapi.com/';
   apiKey = '4401fd10';
 
+  /**
+   * Constructor of the Service with Dependency Injection
+   * @param http The standard Angular HttpClient to make requests
+   */
   constructor(private http: HttpClient) { }
 
   /**
-   * Get data from the OMDBAPI
-  map the result to return only the results that we Z_NEED_DICT
-  @param {string} title Search Term
-  @param {SearchType} type movie, series, episode, or empty
-  @returns Observable with the search results
-   *  */
-
+  * Get data from the OmdbApi 
+  * map the result to return only the results that we need
+  * 
+  * @param {string} title Search Term
+  * @param {SearchType} type movie, series, episode or empty
+  * @returns Observable with the search results
+  */
   searchData(title: string, type: SearchType): Observable<any> {
-    console.log('this url, ', this.url);
-
-    return this.http.get(`${this.url}?s=${encodeURI(title)}&type=${type}&apikey=${this.apiKey}`).pipe(map(results => results['Search'])
+    return this.http.get(`${this.url}?s=${encodeURI(title)}&type=${type}&apikey=${this.apiKey}`).pipe(
+      map(results => results['Search'])
     );
   }
 
   /**
-   * Get the detailed info for an ID using the 'i' parameter.
-   * 
-   * @param {string} id imdbID to retrieve information
-   * @returns Observable with detailed information
-   */
+  * Get the detailed information for an ID using the "i" parameter
+  * 
+  * @param {string} id imdbID to retrieve information
+  * @returns Observable with detailed information
+  */
+  // getDetails(id) {
+  //   console.log('is this working?');
+
+  //   return this.http.get(`${this.url}?i=${id}&plot=full&apikey=${this.apiKey}`);
+  // }
 
   getDetails(id) {
-    console.log('HELLOOOOO', id);
+    console.log('is this working?');
 
-    return this.http.get(`${this.url}?i=${id}&plot=full&apikey=${this.apiKey}`);
+    return this.http.get('http://www.omdbapi.com/?i=tt3896198&apikey=4401fd10');
   }
+
+
 }

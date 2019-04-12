@@ -9,7 +9,7 @@ import { MovieDetailsPage } from './movie-details.page';
 
 const routes: Routes = [
   {
-    path: '/movie-details',
+    path: '',
     component: MovieDetailsPage
   }
 ];

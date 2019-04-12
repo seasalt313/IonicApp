@@ -9,6 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MovieDetailsPage implements OnInit {
 
+
+
   information = null;
 
   /**
@@ -16,11 +18,11 @@ export class MovieDetailsPage implements OnInit {
    * @param activatedRoute Information about the route we are on
    * @param movieService The movie Service to get data
    */
-  constructor(private activatedRoute: ActivatedRoute, private movieService: MovieService) { }
+  constructor(private activatedRoute: ActivatedRoute, private movieService: MovieService) {
+  }
 
   ngOnInit() {
-
-    console.log("HELLO");
+    console.log('hello??');
 
     // Get the ID that was passed with the URL
     let id = this.activatedRoute.snapshot.paramMap.get('id');
