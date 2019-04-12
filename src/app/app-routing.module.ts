@@ -3,8 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
-  { path: 'movies', loadChildren: './pages/movies/movies.module#MoviesPageModule' },
-  { path: 'movie-details', loadChildren: './pages/movie-details/movie-details.module#MovieDetailsPageModule' }
+  { path: 'movies', loadChildren: './movies/movies.module#MoviesPageModule' },
+  { path: 'movie-details', loadChildren: './movie-details/movie-details.module#MovieDetailsPageModule' }
 ];
 @NgModule({
   imports: [
@@ -12,4 +12,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

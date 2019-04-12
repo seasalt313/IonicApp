@@ -9,7 +9,7 @@ import { MovieDetailsPage } from './movie-details.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '/movie-details',
     component: MovieDetailsPage
   }
 ];
@@ -23,4 +23,4 @@ const routes: Routes = [
   ],
   declarations: [MovieDetailsPage]
 })
-export class MovieDetailsPageModule {}
+export class MovieDetailsPageModule { }
