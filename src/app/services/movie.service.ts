@@ -44,14 +44,8 @@ export class MovieService {
   * @param {string} id imdbID to retrieve information
   * @returns Observable with detailed information
   */
-  // getDetails(id) {
-  //   console.log('is this working?');
-
-  //   return this.http.get(`${this.url}?i=${id}&plot=full&apikey=${this.apiKey}`);
-  // }
 
   getDetails(id) {
-    console.log('is this working?');
 
     return this.http.get(`${this.url}?i=${id}&plot=full&apikey=${this.apiKey}`);
   }

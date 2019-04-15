@@ -20,8 +20,6 @@ export class MoviesPage implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-    console.log('this,,,,', this);
-
   }
 
 

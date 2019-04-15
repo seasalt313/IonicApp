@@ -22,8 +22,6 @@ export class MovieDetailsPage implements OnInit {
   }
 
   ngOnInit() {
-    console.log('hello??');
-
     // Get the ID that was passed with the URL
     let id = this.activatedRoute.snapshot.paramMap.get('id');
 
