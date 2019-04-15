@@ -53,7 +53,7 @@ export class MovieService {
   getDetails(id) {
     console.log('is this working?');
 
-    return this.http.get('http://www.omdbapi.com/?i=tt3896198&apikey=4401fd10');
+    return this.http.get(`${this.url}?i=${id}&plot=full&apikey=${this.apiKey}`);
   }
 
 

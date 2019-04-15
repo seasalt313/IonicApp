@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'tabs/movies', loadChildren: './movies/movies.module#MoviesPageModule' },
-  { path: 'movies/:id', outlet: 'movies', loadChildren: './movie-details/movie-details.module#MovieDetailsPageModule' }
 ];
 
 @NgModule({
